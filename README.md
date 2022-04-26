@@ -15,7 +15,7 @@ In this toy project, we aim to build a deep learning clssifier that predicts whe
 
   Cat            |  Dog
 :--------------:|:--------:
-![](data/images/cat.0.jpg)  |  ![](data/images/dog.0.jpg)
+![](figures/cat.1.jpg)  |  ![](figures/dog.0.jpg)
 
 
 
@@ -63,10 +63,10 @@ $ python3 main.py --model cnn --10
 # Results Presentation
 
 ``` Resnet result```  </br>
-![](data/images/train_res.png) 
+![](figures/train_res.jpg) 
 
 ``` CNN result```  </br>
-![](data/images/train_cnn.png) 
+![](figures/train_cnn.jpg) 
 
 # Make prediction #
 
@@ -75,7 +75,7 @@ $python3 predict.py --image_path "./data/Images/cat.0.jpg"
 ```
 
 ``` Example: Result```  </br>
-![caption](/data/images/cat.0.jpg) </br>
+![caption](figures/cat.1.jpg) </br>
 {'class': 'cat', 'confidence': '0.5970718264579773'}
 ---
 ___
