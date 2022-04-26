@@ -1,7 +1,10 @@
-# Prediction
-import torchvision.transforms as transforms
-from PIL import Image 
+#------------------------------**********************---------------------
+import torch
+import warnings
+from PIL import Image
+from torchvision import transforms
 import models 
+from argparse import ArgumentParser
 
 def image_transform(imagepath):
     test_transforms = transforms.Compose([transforms.Resize(255),
@@ -21,7 +24,7 @@ def predict(imagepath, verbose=False):
     try:
         checks_if_model_is_loaded = type(model)
     except:
-        model = models.resnet50()
+        model = models.resnet()
     model.eval()
     #summary(model, input_size=(3,244,244))
     if verbose:
@@ -37,9 +40,11 @@ def predict(imagepath, verbose=False):
     else:
         return {'class':'cat','confidence':str(topconf.item())}
 
+parser= ArgumentParser()
+parser.add_argument('-m', '--image_path', help= 'upload the image',required= True)
+main_args= vars(parser.parse_args())
 
-
-image_path= "Image_path"
+image_path= main_args['image_path']
 # print(predict('data/Images/image_name'))
 print(Image.open(image_path))
 print(predict(image_path))
